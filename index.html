@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Protected Site</title>
+    <link rel="stylesheet" href="style.css">
+<style type="text/css" id="dcoder_stylesheet">body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    background-image: url('https://imgur.com/GR6yoHF'); /* ضع هنا رابط الخلفية إذا أردت */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    padding: 20px;
+}
+
+#password-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    margin: auto;
+}
+
+#password-container h1 {
+    color: black;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    border: 2px solid #FF416C;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #FF416C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #FF5C8D;
+}
+
+#message-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+#message {
+    font-size: 24px;
+    color: black;
+}
+
+#romantic-message {
+    font-size: 20px;
+    font-weight: bold;
+    color: #FF416C;
+    margin: 20px 0;
+}
+
+#dino-emoji {
+    font-size: 80px;
+    margin-top: 20px;
+}</style></head>
+<body>
+
+    <div id="password-container">
+        <h1 style="color: black;">Welcome, Enter Your Password</h1>
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="checkPassword()">Submit</button>
+        <p id="error-message" style="color:red;"></p>
+    </div>
+
+    <div id="message-container" style="display:none;">
+        <div id="message">
+            <h2>Special Message</h2>
+            <p id="romantic-message">ولد الديناصور 🙂😂😂</p>
+            <div id="dino-emoji">🦖</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+<script type="text/javascript" id="dcoder_script">function checkPassword() {
+    var password = document.getElementById("password").value;
+    var errorMessage = document.getElementById("error-message");
+    var messageContainer = document.getElementById("message-container");
+    
+    // كلمة السر الصحيحة
+    var correctPassword = "Yassine123"; 
+
+    if (password === correctPassword) {
+        messageContainer.style.display = "flex"; // عرض الرسالة
+        document.getElementById("password-container").style.display = "none";
+    } else {
+        errorMessage.textContent = "Incorrect password. Please try again.";
+    }
+}</script></body></html>
